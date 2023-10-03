@@ -1,0 +1,26 @@
+<vbox style="padding: 5px;">
+    <hbox>
+        <label text="Channel: " />
+        <dropdown id="dropdown" text="Stable">
+            <data>
+                <item text="Stable" />
+                <item text="LTS" />
+                <item text="Preview" />
+                <item text="Testing" />
+                <item text="Development" />
+            </data>
+        </dropdown>
+    </hbox>
+    <listview id="updates" width="500">
+        <data>
+            <item text="Loading..." />
+        </data>
+    </listview>
+    <hbox horizontalAlign="left" verticalAlign="bottom">
+        <button id="refresh" text="Refresh" />
+    </hbox>
+    <hbox horizontalAlign="right" verticalAlign="bottom">
+        <button id="update" text="Update" disabled="true" />
+        <button id="close" text="Close" />
+    </hbox>
+</vbox>
