@@ -11,7 +11,8 @@ class Updater {
 		req.request();
 
 		for (pkg in data) {
-			var symmver = "1.0.0.0";
+			var symmver = File.getContent("/etc/symmos/version");
+			var kernelver = File.getContent("/proc/sys/kernel/osrelease");
 
 			if (pkg.symmvers.contains(symmver))
 				list.push(pkg.pkg);
