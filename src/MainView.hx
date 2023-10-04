@@ -25,6 +25,14 @@ class MainView extends VBox {
 		Sys.exit(0);
 	}
 
+	@:bind(update, MouseEvent.CLICK)
+	function install(_) {
+		for (pkg in Updater.scan()) {
+			Updater.download(pkg);
+			Updater.install(pkg);
+		}
+	}
+
 	function updateList(_) {
 		update.disabled = true;
 		Config.channel = dropdown.text;
