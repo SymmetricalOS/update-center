@@ -27,10 +27,12 @@ class MainView extends VBox {
 
 	@:bind(update, MouseEvent.CLICK)
 	function install(_) {
+		update.disabled = true;
 		for (pkg in Updater.scan()) {
 			Updater.download(pkg);
 			Updater.install(pkg);
 		}
+		updateList(null);
 	}
 
 	function updateList(_) {
